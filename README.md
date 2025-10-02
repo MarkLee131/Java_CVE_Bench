@@ -8,33 +8,25 @@ This repository contains a **real-world Java vulnerability benchmark** comprisin
 
 ## 🚀 Quick Start
 
+> [!NOTE]
+> **Current Status**: We currently provide **112 verified download URLs** out of 165 total CVEs. We are actively working to complete all 165 URLs and will update the database soon. Stay tuned for the complete dataset!
+
 For your convenience, we provide a **ready-to-use download database** that allows you to quickly obtain all vulnerability data:
 
 ### Option 1: Direct Download (Recommended)
 ```bash
-# Download the CSV file containing all verified download URLs
-# (The file is already included in this repository)
-# wget https://raw.githubusercontent.com/your-username/Java_CVE_Bench/main/java_cve_verified_download_urls.csv
+# Install required dependencies
+pip install pandas requests
 
-# Use our Python script to batch download all vulnerability data
-python3 -c "
-import pandas as pd
-import requests
-from pathlib import Path
-
-df = pd.read_csv('java_cve_verified_download_urls.csv')
-Path('vulnerability_data').mkdir(exist_ok=True)
-
-for _, row in df.iterrows():
-    url = row['download_url']
-    filename = f'vulnerability_data/{row[\"project_name\"]}_{row[\"version\"]}_{row[\"cve_id\"]}.jar'
-    print(f'Downloading: {row[\"project_name\"]} {row[\"version\"]}')
-    
-    response = requests.get(url)
-    with open(filename, 'wb') as f:
-        f.write(response.content)
-"
+# Run the download script
+python3 download_vulnerabilities.py
 ```
+
+The script will:
+- ✅ Read all 112 verified URLs from `java_cve_verified_download_urls.csv`
+- ✅ Download JAR files to `final_downloads/` directory
+- ✅ Show progress and handle errors gracefully
+- ✅ Skip already downloaded files
 
 ### Option 2: Manual Selection
 Browse `java_cve_verified_download_urls.csv` to select specific projects and versions for your research needs.
@@ -68,30 +60,6 @@ Browse `java_cve_verified_download_urls.csv` to select specific projects and ver
 └── paper/                                 # Research paper and supplementary materials
 ```
 
-## 🔬 Methodology
-
-Our benchmark construction follows a rigorous four-phase approach:
-
-### Phase 1: Java Programs Collection
-- **Sources**: NVD, Debian Security Advisories, Red Hat Bugzilla
-- **Initial Dataset**: 680 programs with disclosed CVEs
-- **Selection Criteria**: Open-source Java projects with patch commits
-
-### Phase 2: Version Range Extraction & Method-Level Locating
-- **V-SZZ Algorithm**: Precise vulnerable version range extraction
-- **Universal Ctags**: Method-level vulnerability localization
-- **Granularity**: Both vulnerable and fixed method identification
-
-### Phase 3: Program Packaging & Filtering
-- **Compatibility**: Support for different SAST tool input formats
-- **Quality Control**: Excluded non-packageable programs
-- **Final Dataset**: 165 packageable programs
-
-### Phase 4: Expert Cross-Validation
-- **Expert Panel**: 3 security experts (7+ years Java, 5+ years security)
-- **Validation Process**: Independent verification → Cross-validation → Consensus building
-- **Quality Assurance**: Majority voting with conflict resolution
-
 ## 📈 Usage Scenarios
 
 This benchmark is designed for:
@@ -99,8 +67,6 @@ This benchmark is designed for:
 - **🔍 SAST Tool Evaluation**: Comprehensive comparison of vulnerability detection capabilities
 - **📚 Security Research**: Academic research on Java vulnerability patterns
 - **🏭 Industry Benchmarking**: Standardized evaluation for commercial SAST tools
-- **🎓 Educational Purposes**: Teaching vulnerability analysis and secure coding
-
 
 ### Quick Download Database
 - **`java_cve_verified_download_urls.csv`**: 112 verified download URLs

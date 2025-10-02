@@ -173,13 +173,6 @@ We welcome contributions to improve and extend this benchmark:
 
 This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
-
-We thank:
-- The three security experts who validated our benchmark
-- The open-source community for maintaining the vulnerable projects
-- Advisory sources (NVD, Debian, Red Hat) for vulnerability information
-
 ---
 
 > [!IMPORTANT]

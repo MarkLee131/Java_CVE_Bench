@@ -3,7 +3,7 @@
 # Theme
 theme: jekyll-theme-cayman
 title: "PoC Research Papers"
-description: "A real-world Java vulnerability Benhamrk curated for our research paper "Comparison and Evaluation on Static Application Security Testing (SAST) Tools for Java"
+description: 'A real-world Java vulnerability Benhamrk curated for our research paper "Comparison and Evaluation on Static Application Security Testing (SAST) Tools for Java"'
 url: "https://marklee131.github.io"
 baseurl: "/Java_CVE_Bench"
 

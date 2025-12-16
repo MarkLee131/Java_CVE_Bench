@@ -1,6 +1,6 @@
 # Java CVE Benchmark [![DOI](https://img.shields.io/badge/DOI-10.1145/3611643.3616262-blue.svg)](https://doi.org/10.1145/3611643.3616262) [![Visit Our Website](https://img.shields.io/badge/Website-Java_CVE_Bench-green)](https://sites.google.com/view/java-sast-study/home) [![](https://img.shields.io/badge/ESEC/FSE-2023-blue?style=flat-square)](https://2023.esec-fse.org/)
 
-**A Comprehensive Real-World Java Vulnerability Benchmark for Static Application Security Testing (SAST) Tools Evaluation**
+**Comparison and Evaluation on Static Application Security Testing (SAST) Tools for Java**
 
 ## Overview
 
